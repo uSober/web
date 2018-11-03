@@ -9,9 +9,8 @@ export class BalanceTest extends React.Component {
         <div className='instructions'>
         <p className='instruction'>This will measure your balance.</p>
         <p className='instruction'>Step 1: Stand on your left leg.</p>
-        <p className='instruction'>Step 2: Press start button.</p>
-        <p className='instruction'>Step 3: Extend arms out to the side.</p>
-        <p className='instruction'>Step 4: Wait for completion sound.</p>
+        <p className='instruction'>Step 2: Extend arms out to the side with palms down.</p>
+        <p className='instruction'>Step 3: Wait for completion sound.</p>
         </div>
       </div>
     )
