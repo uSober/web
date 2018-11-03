@@ -19,7 +19,7 @@ export class Results extends React.Component {
   }
 
   getResults () {
-    return 100
+    return 0
   }
 }
 
