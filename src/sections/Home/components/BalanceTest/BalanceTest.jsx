@@ -12,6 +12,7 @@ export class BalanceTest extends React.Component {
         <p className='instruction'>Step 2: Extend arms out to the side with palms down.</p>
         <p className='instruction'>Step 3: Wait for completion sound.</p>
         </div>
+        <img alt='' width='200px' src='balance.svg'/>
       </div>
     )
   }
