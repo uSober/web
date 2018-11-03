@@ -12,7 +12,7 @@ export class Home extends React.Component {
     const {step} = this.state
     let curr = null
     switch(step){
-      case 0: 
+      case 0:
         curr = <Description/>;
         break
       case 1:
@@ -34,11 +34,11 @@ export class Home extends React.Component {
       <div className='mainContainer'>
         <div className='steps' >
         <Steps initial={0} size='small' current={step}>
-          <Steps.Step title="Disclaimer" description="This is a description." />
-          <Steps.Step title="Selfie" description="This is a description." />
-          <Steps.Step title="Speed Game" description="This is a description." />
-          <Steps.Step title="Survey" description="This is a description." />
-          <Steps.Step title="Results" description="This is a description." />
+          <Steps.Step title="Disclaimer"/>
+          <Steps.Step title="Selfie"/>
+          <Steps.Step title="Speed Game"/>
+          <Steps.Step title="Survey"/>
+          <Steps.Step title="Results"/>
         </Steps>
         </div>
         <div className='card'>
