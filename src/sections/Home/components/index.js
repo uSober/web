@@ -1,6 +1,6 @@
 import ReactionTime from './ReactionTime'
 import SelfieClassifier from './SelfieClassifier'
-import Survey from './Survey'
+import BalanceTest from './BalanceTest'
 import Description from './Description'
 
-export { Description, ReactionTime, SelfieClassifier, Survey }
+export { Description, ReactionTime, SelfieClassifier, BalanceTest }
