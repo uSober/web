@@ -37,11 +37,11 @@ export class Home extends React.Component {
       <div className='mainContainer'>
         <div className='steps' >
         <Steps initial={0} size='small' current={step}>
-          <Steps.Step title="Disclaimer" description="This is a description." />
-          <Steps.Step title="Selfie" description="This is a description." />
-          <Steps.Step title="Speed Game" description="This is a description." />
-          <Steps.Step title="Survey" description="This is a description." />
-          <Steps.Step title="Results" description="This is a description." />
+          <Steps.Step title="Disclaimer" description="Readme please 😊" />
+          <Steps.Step title="Selfie" description="Ai on selfies 🤳" />
+          <Steps.Step title="Speed Game" description="You fast enough? ⚡ " />
+          <Steps.Step title="Balance" description="Left Leg only ⚖" />
+          <Steps.Step title="Results" description="uSober bro? 🍺" />
         </Steps>
         </div>
         <div className='card'>
