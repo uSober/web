@@ -1,7 +1,6 @@
 import * as React from 'react';
 import './SelfieClassifier.css'
 import Camera from 'react-html5-camera-photo';
-import { Button } from 'antd';
 
 import 'react-html5-camera-photo/build/css/index.css';
 
