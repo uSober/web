@@ -6,7 +6,7 @@ import {Description, ReactionTime, SelfieClassifier, BalanceTest, Results} from 
 
 export class Home extends React.Component {
   state = {
-    step: 0,
+    step: 1,
     selfieData: null,
     reactionData: [],
     balanceData: []
@@ -16,19 +16,19 @@ export class Home extends React.Component {
     const {step, reactionData, balanceData} = this.state
     let curr = null
     switch(step){
-      case 0:
+      case 1:
         curr = <Description/>;
         break
-      case 1:
+      case 2:
         curr = <SelfieClassifier addSelfie={this.addSelfie} />
         break
-      case 2:
+      case 3:
         curr = <ReactionTime maxTaps={10} data={reactionData} addData={this.addReaction}/>
         break
-      case 3:
+      case 4:
         curr = <BalanceTest data={balanceData} addData={this.addBalance} />
         break
-      case 4:
+      case 5:
         curr = <Results reactionData={this.state.reactionData} balanceData={this.state.reactionData} />
       break
       default:
@@ -40,10 +40,10 @@ export class Home extends React.Component {
       {/*<h1><img src='icons/icon-72x72.png' alt=''/><em>uSober</em></h1>*/}
       <div className='main-container'>
         <div className='steps' >
-        <Steps initial={0} size='small' current={step}>
+        <Steps initial={0} size='small' current={step-1}>
           <Steps.Step title="Disclaimer" description="Readme please 😊" />
           <Steps.Step title="Selfie" description="Ai on selfies 🤳" />
-          <Steps.Step title="Speed Game" description="⚡Fast enough?" />
+          <Steps.Step title="Speed Game" description="Fast enough?⚡" />
           <Steps.Step title="Balance" description="Left Leg only ⚖" />
           <Steps.Step title="Results" description="uSober bro? 🍺" />
         </Steps>
@@ -51,7 +51,7 @@ export class Home extends React.Component {
         <div className='card'>
           {curr}
           <div className='footer'>
-            <p className='nextLabel'>Next</p><Button type="primary" size='large' icon="right" shape="circle" onClick={this.nextStep} />
+            <p className='nextLabel'>{step === 5 ? 'Restart' : 'Next'}</p><Button type="primary" size='large' icon="right" shape="circle" onClick={this.nextStep} />
           </div>
         </div>
       </div>
