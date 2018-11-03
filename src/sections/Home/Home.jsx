@@ -13,7 +13,7 @@ export class Home extends React.Component {
   }
 
   render() {
-    const {step, selfieData, reactionData, balanceData} = this.state
+    const {step, reactionData, balanceData} = this.state
     let curr = null
     switch(step){
       case 0:

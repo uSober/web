@@ -15,7 +15,7 @@ export class ReactionTime extends React.Component {
   	return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   start = () => {
-    if(this.state.instructions == 'Information recorded!'){
+    if(this.state.instructions === 'Information recorded!'){
       return
     }
     this.changeToRed();
