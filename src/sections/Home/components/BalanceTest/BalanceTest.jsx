@@ -31,10 +31,10 @@ export class BalanceTest extends React.Component {
     return (
       <div className='stack'>
         <div className='instructions'>
-          <p className='instruction'>Step 1: Stand on your left leg.</p>
-          <p className='instruction'>Step 2: Hold your phone in your dominant hand.</p>
-          <p className='instruction'>Step 3: Extend arms out to the side with palms down.</p>
-          <p className='instruction'>Step 4: Wait for completion sound.</p>
+          <p className='instruction'><span>Step 1:</span> Stand on your left leg.</p>
+          <p className='instruction'><span>Step 2: </span>Hold your phone in your dominant hand.</p>
+          <p className='instruction'><span>Step 3: </span> Extend arms out to the side with palms down.</p>
+          <p className='instruction'><span>Step 4: </span> Wait for completion sound.</p>
           <p className='instruction'>When you are ready, please press the Start button to begin the Balance test.</p>
           {!this.state.isRecording && <Button type="primary" icon="play" onClick={this.startRecording}>
             {this.state.buttonMessage}
