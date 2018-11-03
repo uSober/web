@@ -26,22 +26,17 @@ export class Home extends React.Component {
     }
 
     return (
+      <>
+      <h1><em>uSober</em></h1>
       <div className='mainContainer'>
-        <div className='location'>
-          This is the Home
+        <div className='card'>
           {curr}
-          <div>
-          <Button.Group size='small'>
-          <Button type="primary" onClick={this.prevStep}>
-              <Icon type="left" />Backward
-            </Button>
-            <Button type="primary" onClick={this.nextStep}>
-              Forward<Icon type="right" />
-            </Button>
-          </Button.Group>
+          <div className='footer'>
+            <Button type="primary" size='large' icon="right" shape="circle" onClick={this.nextStep} />
           </div>
         </div>
       </div>
+      </>
     )
   }
   nextStep = () => {
