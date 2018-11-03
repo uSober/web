@@ -7,23 +7,28 @@ import 'react-html5-camera-photo/build/css/index.css';
 
 export class SelfieClassifier extends React.Component {
   state = {
-    cameraOn: false
+    cameraOn: true,
+    image: null
   }
   render() {
     const {cameraOn} = this.state
     const camera = cameraOn ? 
-      <Camera onTakePhoto = { (dataUri) => { this.onTakePhoto(dataUri) } }/> : 
-      <Button 
-        type="primary" 
-        shape="circle" 
-        icon="camera" 
-        size='large' 
-        onClick={this.toggleCamera}
-      />
+      <Camera onTakePhoto = { (dataUri) => { this.onTakePhoto(dataUri) } }/>:
+      <>
+        <div><img alt='' src={this.state.image}/></div>
+        <Button 
+          type="primary" 
+          shape="circle" 
+          icon="camera" 
+          size='large' 
+          onClick={this.toggleCamera}
+        />
+      </>
     return (
       <div>
         This is the SelfieClassifier
-        <div>{camera}</div>
+        
+        <div className='cameraWindow'>{camera}</div>
       </div>
     )
   }
@@ -33,7 +38,8 @@ export class SelfieClassifier extends React.Component {
   }
   onTakePhoto = (dataUri) => {
     this.toggleCamera()
-    // Do stuff with the dataUri photo...
+    console.log(dataUri)
+    this.setState({image: dataUri})
   }
 
 }
