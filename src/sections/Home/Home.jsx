@@ -6,7 +6,7 @@ import {Description, ReactionTime, SelfieClassifier, BalanceTest} from './compon
 
 export class Home extends React.Component {
   state = {
-    step: 0
+    step: 3
   }
   render() {
     const {step} = this.state
@@ -33,7 +33,7 @@ export class Home extends React.Component {
 
     return (
       <>
-      <h1><em>uSober</em></h1>
+      <h1><img src='icons/icon-72x72.png' alt=''/><em>uSober</em></h1>
       <div className='mainContainer'>
         <div className='steps' >
         <Steps initial={0} size='small' current={step}>
