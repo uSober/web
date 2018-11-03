@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from 'antd';
+import { Button, Steps } from 'antd';
 import './Home.css'
 
 import {Description, ReactionTime, SelfieClassifier, Survey} from './components'
@@ -32,6 +32,15 @@ export class Home extends React.Component {
       <>
       <h1><em>uSober</em></h1>
       <div className='mainContainer'>
+        <div className='steps' >
+        <Steps initial={0} current={step}>
+          <Steps.Step title="Disclaimer" description="This is a description." />
+          <Steps.Step title="Selfie" description="This is a description." />
+          <Steps.Step title="Speed Game" description="This is a description." />
+          <Steps.Step title="Survey" description="This is a description." />
+          <Steps.Step title="Results" description="This is a description." />
+        </Steps>
+        </div>
         <div className='card'>
           {curr}
           <div className='footer'>
