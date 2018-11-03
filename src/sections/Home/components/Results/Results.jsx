@@ -14,6 +14,8 @@ export class Results extends React.Component {
   }
 
   getResults () {
+    const {balanceData, reactionData, selfieData} = this.props;
+    console.log(balanceData, reactionData, selfieData)
     return 0
   }
 }
