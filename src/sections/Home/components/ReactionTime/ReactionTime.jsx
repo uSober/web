@@ -16,10 +16,16 @@ export class ReactionTime extends React.Component {
   }
   start = () => {
     this.changeToRed();
-    setTimeout(this.changeToGreen, this.getRandomNumberBetween(2,5) * 1000);
+    setTimeout(this.changeToGreen, this.getRandomNumberBetween(1,2) * 1000);
   }
   end = () => {
     this.changeToBlue();
+    this.setState({instructions: 'Information recorded!'})
+    console.log(this.props.data)
+    const mean = this.props.data.reduce((a, b) => { return a + b; })/this.props.data.length
+    const variance = this.props.data.reduce((a, b) => { return Math.abs(a-mean) + b; })/this.props.data.length
+    console.log(mean,variance)
+
   }
   changeToBlue = () =>  {
     this.setState({
