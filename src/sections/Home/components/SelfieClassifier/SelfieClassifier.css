@@ -67,7 +67,7 @@
 
 .react-html5-camera-photo {
 	position: relative;
-	text-align: center
+	text-align: center;
 }
 
 .react-html5-camera-photo>img,
@@ -76,8 +76,8 @@
 }
 
 .react-html5-camera-photo>.display-error {
-	width: 80%;
-	margin: 0 auto
+	width: 100%;
+	margin: 0 auto;
 }
 
 @media(max-width:768px) {

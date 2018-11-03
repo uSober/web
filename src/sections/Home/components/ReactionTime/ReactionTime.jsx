@@ -7,9 +7,22 @@ export class ReactionTime extends React.Component {
     this.state = {
       count: 1,
       color: '#4AA6FC',
-      instructions: 'Tap to Start'
+      instructions: 'Tap to Start',
+      analysis: {
+        mean: null,
+        variance: null
+      }
     };
     this.maxTaps = 10;
+  }
+  render() {
+    return (
+      <div style={{ background: this.state.color}} onClick={this.handleClick} id='gameArea'>
+        {this.state.instructions}
+        {this.state.analysis.mean && (<div>Mean: {this.state.analysis.mean}</div>)}
+        {this.state.analysis.variance && (<div>Variance: {this.state.analysis.variance}</div>)}
+      </div>
+    )
   }
   getRandomNumberBetween = (min, max) => {
   	return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -24,8 +37,7 @@ export class ReactionTime extends React.Component {
     console.log(this.props.data)
     const mean = this.props.data.reduce((a, b) => { return a + b; })/this.props.data.length
     const variance = this.props.data.reduce((a, b) => { return Math.abs(a-mean) + b; })/this.props.data.length
-    console.log(mean,variance)
-
+    this.setState({analysis: {mean, variance}})
   }
   changeToBlue = () =>  {
     this.setState({
@@ -53,9 +65,7 @@ export class ReactionTime extends React.Component {
     })
   }
   addReactionTime = (newTime) => {
-    this.setState(prevState => ({
-      reactionTimes: [...prevState.reactionTimes, newTime]
-    }));
+    this.props.addData(newTime)
   }
   handleClick = (event) => {
     //If Blue
@@ -74,13 +84,6 @@ export class ReactionTime extends React.Component {
         this.end();
       }
     }
-  }
-  render() {
-    return (
-      <div style={{ background: this.state.color}} onClick={this.handleClick} id='gameArea'>
-        {this.state.instructions}
-      </div>
-    )
   }
 }
 

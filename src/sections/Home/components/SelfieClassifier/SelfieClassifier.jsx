@@ -13,7 +13,7 @@ export class SelfieClassifier extends React.Component {
   render() {
     const {cameraOn} = this.state
     const camera = cameraOn ?
-      <Camera onTakePhoto = { (dataUri) => { this.onTakePhoto(dataUri) } }/>:
+      <Camera style={{borderRadius: '0.5rem 0.5rem 0 0', width: '100%'}} onTakePhoto = { (dataUri) => { this.onTakePhoto(dataUri) } }/>:
       <>
         <div><img className='selfie' alt='' src={this.state.image}/></div>
         <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}><Button
