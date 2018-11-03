@@ -9,7 +9,9 @@ p {
   font-size: 1rem;
 }
 
-
+.card {
+  background: linear-gradient(180deg, #FF6651 0%, rgba(255, 126, 53, 0.86) 100%);
+}
 .instructions {
   margin-top: 15px;
   font-weight: 600;

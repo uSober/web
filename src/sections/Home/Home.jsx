@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Button, Steps } from 'antd';
 import './Home.css'
+import logoSquare from'./logo-square.png';
 
 import {Description, ReactionTime, SelfieClassifier, Survey} from './components'
 
@@ -30,16 +31,18 @@ export class Home extends React.Component {
 
     return (
       <>
-      <h1><em>uSober</em></h1>
+      <header>
+        <img src={logoSquare} alt="Logo"/>
+      </header>
       <div className='mainContainer'>
         <div className='steps' >
-        <Steps initial={0} size='small' current={step}>
-          <Steps.Step title="Disclaimer"/>
-          <Steps.Step title="Selfie"/>
-          <Steps.Step title="Speed Game"/>
-          <Steps.Step title="Survey"/>
-          <Steps.Step title="Results"/>
-        </Steps>
+          <Steps initial={0} size='small' current={step}>
+            <Steps.Step title="Disclaimer"/>
+            <Steps.Step title="Selfie"/>
+            <Steps.Step title="Speed Game"/>
+            <Steps.Step title="Survey"/>
+            <Steps.Step title="Results"/>
+          </Steps>
         </div>
         <div className='card'>
           {curr}
