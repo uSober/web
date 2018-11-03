@@ -33,7 +33,7 @@ export class Home extends React.Component {
       <h1><em>uSober</em></h1>
       <div className='mainContainer'>
         <div className='steps' >
-        <Steps initial={0} current={step}>
+        <Steps initial={0} size='small' current={step}>
           <Steps.Step title="Disclaimer" description="This is a description." />
           <Steps.Step title="Selfie" description="This is a description." />
           <Steps.Step title="Speed Game" description="This is a description." />
