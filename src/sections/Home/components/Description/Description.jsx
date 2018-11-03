@@ -6,6 +6,7 @@ export class Description extends React.Component {
     return (
       <div className='stack'>
         <h1>Disclaimer</h1>
+        <img className="logo" src='icons/logo-circular.svg' alt="Logo"/>
         <div className='instructions'>
           <p className='instruction'>
           uSober has made every attempt to ensure the accuracy and reliability of the information provided by this application. However,
