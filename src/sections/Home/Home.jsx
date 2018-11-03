@@ -6,7 +6,7 @@ import {Description, ReactionTime, SelfieClassifier, BalanceTest, Results} from 
 
 export class Home extends React.Component {
   state = {
-    step: 2,
+    step: 0,
     selfieData: null,
     reactionData: [],
     balanceData: []
@@ -51,7 +51,7 @@ export class Home extends React.Component {
         <div className='card'>
           {curr}
           <div className='footer'>
-            <Button type="primary" size='large' icon="right" shape="circle" onClick={this.nextStep} />
+            <p className='nextLabel'>Next</p><Button type="primary" size='large' icon="right" shape="circle" onClick={this.nextStep} />
           </div>
         </div>
       </div>
