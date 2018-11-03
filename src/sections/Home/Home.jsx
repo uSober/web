@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, Steps } from 'antd';
 import './Home.css'
-import logoSquare from'./logo-square.png';
+import logoSquare from'./logo-circle.svg';
 
 import {Description, ReactionTime, SelfieClassifier, Survey} from './components'
 
@@ -20,7 +20,7 @@ export class Home extends React.Component {
         curr = <SelfieClassifier/>
         break
       case 2:
-        curr = <ReactionTime/>
+        curr = <ReactionTime maxTaps={10}/>
         break
       case 3:
         curr = <Survey/>
@@ -32,7 +32,7 @@ export class Home extends React.Component {
     return (
       <>
       <header>
-        <img src={logoSquare} alt="Logo"/>
+        <img className="logo" src={logoSquare} alt="Logo"/>
       </header>
       <div className='mainContainer'>
         <div className='steps' >
