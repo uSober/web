@@ -38,7 +38,7 @@ export class Home extends React.Component {
     return (
       <>
       <header>
-      <img className="logo" src='icons/icon-72x72.png' alt="Logo"/>
+      <img className="logo" width='72' src='icons/icon-192x192.png' alt="Logo"/>
       </header>
       {/*<h1><img src='icons/icon-72x72.png' alt=''/><em>uSober</em></h1>*/}
       <div className='mainContainer'>
