@@ -28,6 +28,10 @@ p {
   float: left;
 }
 
+.instruction span {
+  font-weight: 500;
+}
+
 .instruction p {
   float: left;
   margin-top: -5px;
