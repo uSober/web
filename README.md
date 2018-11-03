@@ -8,4 +8,6 @@ This is created as a Hackathon project at ECHacks 2018. The app will be availabl
 
 ### Team
 - Nicholas Lewanowicz
-- 
+- Kostia Arlouski
+- Raveen Singh
+- Bryen Xie
