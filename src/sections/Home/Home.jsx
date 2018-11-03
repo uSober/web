@@ -23,7 +23,7 @@ export class Home extends React.Component {
         curr = <SelfieClassifier />
         break
       case 2:
-        curr = <ReactionTime maxTaps={10}/>
+        curr = <ReactionTime maxTaps={10} data={reactionData} addData={this.addReaction}/>
         break
       case 3:
         curr = <BalanceTest data={balanceData} addData={this.addBalance} />
@@ -73,6 +73,11 @@ export class Home extends React.Component {
   addBalance = (point) => {
     this.setState({balanceData: this.state.balanceData.concat(point)})
     console.log(this.state.balanceData.length)
+  }
+
+  addReaction = (point) => {
+    this.setState({reactionData: this.state.reactionData.concat(point)})
+    console.log(this.state.reactionData.length)
   }
 }
 

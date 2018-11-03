@@ -7,8 +7,7 @@ export class ReactionTime extends React.Component {
     this.state = {
       count: 1,
       color: '#4AA6FC',
-      instructions: 'Tap to Start',
-      reactionTimes: [],
+      instructions: 'Tap to Start'
     };
     this.maxTaps = 10;
   }
@@ -16,11 +15,15 @@ export class ReactionTime extends React.Component {
   	return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   start = () => {
+    if(this.state.instructions == 'Information recorded!'){
+      return
+    }
     this.changeToRed();
-    setTimeout(this.changeToGreen, this.getRandomNumberBetween(2,5) * 1000);
+    setTimeout(this.changeToGreen, this.getRandomNumberBetween(1,4) * 1000);
   }
   end = () => {
     this.changeToBlue();
+    this.setState({instructions: 'Information recorded!'})
   }
   changeToBlue = () =>  {
     this.setState({
@@ -48,9 +51,7 @@ export class ReactionTime extends React.Component {
     })
   }
   addReactionTime = (newTime) => {
-    this.setState(prevState => ({
-      reactionTimes: [...prevState.reactionTimes, newTime]
-    }));
+    this.props.addData(newTime)
   }
   handleClick = (event) => {
     //If Blue
