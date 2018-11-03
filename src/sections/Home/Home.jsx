@@ -2,16 +2,19 @@ import * as React from 'react';
 import { Button, Icon } from 'antd';
 import './Home.css'
 
-import {ReactionTime, SelfieClassifier, Survey} from './components'
+import {Description, ReactionTime, SelfieClassifier, Survey} from './components'
 
 export class Home extends React.Component {
   state = {
-    step: 1
+    step: 0
   }
   render() {
     const {step} = this.state
     let curr = null
     switch(step){
+      case 0: 
+        curr = <Description/>;
+        break
       case 1:
         curr = <SelfieClassifier/>
         break
