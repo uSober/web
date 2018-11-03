@@ -38,10 +38,11 @@ export class BalanceTest extends React.Component {
 
   orientation = (event) => {
     const {alpha, beta, gamma} = event
-    const {data} = this.state
-    const newData = this.state.isRecording ? data.concat({alpha, beta, gamma}) : data
-    console.log(data.length)
-    this.setState({event: {alpha, beta, gamma}, data: newData})
+    const {addData} = this.props 
+    if (this.state.isRecording) {
+      addData({alpha, beta, gamma})
+    }
+    this.setState({event: {alpha, beta, gamma}})
   }
 }
 

@@ -6,23 +6,27 @@ import {Description, ReactionTime, SelfieClassifier, BalanceTest, Results} from 
 
 export class Home extends React.Component {
   state = {
-    step: 0
+    step: 0,
+    selfieData: null,
+    reactionData: [],
+    balanceData: []
   }
+
   render() {
-    const {step} = this.state
+    const {step, selfieData, reactionData, balanceData} = this.state
     let curr = null
     switch(step){
       case 0:
         curr = <Description/>;
         break
       case 1:
-        curr = <SelfieClassifier/>
+        curr = <SelfieClassifier />
         break
       case 2:
         curr = <ReactionTime maxTaps={10}/>
         break
       case 3:
-        curr = <BalanceTest/>
+        curr = <BalanceTest data={balanceData} addData={this.addBalance} />
         break
       case 4:
         curr = <Results/>
@@ -64,6 +68,11 @@ export class Home extends React.Component {
   prevStep = () => {
     const step = Math.max(0, this.state.step - 1)
     this.setState({step})
+  }
+
+  addBalance = (point) => {
+    this.setState({balanceData: this.state.balanceData.concat(point)})
+    console.log(this.state.balanceData.length)
   }
 }
 
