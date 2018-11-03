@@ -39,7 +39,7 @@ export class Home extends React.Component {
         <Steps initial={0} size='small' current={step}>
           <Steps.Step title="Disclaimer" description="Readme please 😊" />
           <Steps.Step title="Selfie" description="Ai on selfies 🤳" />
-          <Steps.Step title="Speed Game" description="You fast enough? ⚡ " />
+          <Steps.Step title="Speed Game" description="⚡Fast enough?" />
           <Steps.Step title="Balance" description="Left Leg only ⚖" />
           <Steps.Step title="Results" description="uSober bro? 🍺" />
         </Steps>
