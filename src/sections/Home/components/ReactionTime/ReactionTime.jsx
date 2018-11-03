@@ -21,6 +21,7 @@ export class ReactionTime extends React.Component {
   }
   end = () => {
     this.changeToBlue();
+
   }
   changeToBlue = () =>  {
     this.setState({

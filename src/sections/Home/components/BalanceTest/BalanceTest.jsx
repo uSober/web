@@ -19,7 +19,7 @@ export class BalanceTest extends React.Component {
     const {alpha, beta, gamma} = this.state.event
     return (
       <div className='stack'>
-        <h1><em>Balance</em></h1>
+        <h1>Balance</h1>
         <div className='instructions'>
           <p className='instruction'>This will measure your balance.</p>
           <p className='instruction'>Step 1: Stand on your left leg.</p>

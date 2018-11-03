@@ -34,10 +34,12 @@ export class Home extends React.Component {
     return (
       <>
       <header>
-      <img className="logo" src='icons/icon-72x72.png' alt="Logo"/>
+        <div className='logo-container'>
+          <img className="logo" src='icons/logo-circular.svg' alt="Logo"/>
+        </div>
       </header>
       {/*<h1><img src='icons/icon-72x72.png' alt=''/><em>uSober</em></h1>*/}
-      <div className='mainContainer'>
+      <div className='main-container'>
         <div className='steps' >
         <Steps initial={0} size='small' current={step}>
           <Steps.Step title="Disclaimer" description="Readme please 😊" />

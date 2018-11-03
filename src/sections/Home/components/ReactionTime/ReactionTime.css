@@ -4,4 +4,6 @@
   align-items: center;
   justify-content: center;
   flex-grow: 1;
+  border: 1px solid white;
+  margin: 1rem 0;
 }

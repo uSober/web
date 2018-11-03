@@ -27,7 +27,6 @@ export class SelfieClassifier extends React.Component {
       </>
     return (
       <div>
-        This is the SelfieClassifier
         <div className='cameraWindow'>{camera}</div>
       </div>
     )

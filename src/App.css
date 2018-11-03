@@ -2,7 +2,11 @@
 @import '~antd/dist/antd.css';
 
 header {
-    background: #434343;
+    background: #fff;
+}
+#root {
+  height: 100%;
+  background:  #434343;
 }
 .steps, .ant-steps-horizontal {
   width: 90%;
