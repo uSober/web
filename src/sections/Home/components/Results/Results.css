@@ -1,0 +1,34 @@
+.stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-size: 1rem;
+}
+.instructions {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.instruction {
+  display: block;
+}
+
+.instruction h3 {
+  float: left;
+}
+
+.instruction p {
+  float: left;
+  margin-top: -5px;
+  margin-left: 0px;
+  font-weight: 400;
+}

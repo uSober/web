@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Button, Steps } from 'antd';
 import './Home.css'
 
-import {Description, ReactionTime, SelfieClassifier, BalanceTest} from './components'
+import {Description, ReactionTime, SelfieClassifier, BalanceTest, Results} from './components'
 
 export class Home extends React.Component {
   state = {
@@ -25,7 +25,7 @@ export class Home extends React.Component {
         curr = <BalanceTest/>
         break
       case 4:
-        curr = <BalanceTest/>
+        curr = <Results/>
       break
       default:
         curr = null
@@ -58,7 +58,7 @@ export class Home extends React.Component {
     )
   }
   nextStep = () => {
-    const step = this.state.step%4 + 1
+    const step = this.state.step%5 + 1
     this.setState({step})
   }
   prevStep = () => {
