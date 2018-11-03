@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Icon } from 'antd';
+import { Button } from 'antd';
 import './Home.css'
 
 import {Description, ReactionTime, SelfieClassifier, Survey} from './components'
