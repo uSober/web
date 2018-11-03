@@ -12,14 +12,14 @@ export class Home extends React.Component {
     const {step} = this.state
     let curr = null
     switch(step){
-      case 0: 
+      case 0:
         curr = <Description/>;
         break
       case 1:
         curr = <SelfieClassifier/>
         break
       case 2:
-        curr = <ReactionTime/>
+        curr = <ReactionTime maxTaps={10}/>
         break
       case 3:
         curr = <BalanceTest/>
@@ -33,7 +33,10 @@ export class Home extends React.Component {
 
     return (
       <>
-      <h1><img src='icons/icon-72x72.png' alt=''/><em>uSober</em></h1>
+      <header>
+      <img className="logo" src='icons/icon-72x72.png' alt="Logo"/>
+      </header>
+      {/*<h1><img src='icons/icon-72x72.png' alt=''/><em>uSober</em></h1>*/}
       <div className='mainContainer'>
         <div className='steps' >
         <Steps initial={0} size='small' current={step}>

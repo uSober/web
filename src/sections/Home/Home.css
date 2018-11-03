@@ -1,3 +1,6 @@
+.logo {
+  margin: 0.5rem;
+}
 .mainContainer {
   width: 100%;
   display: flex;
@@ -5,12 +8,12 @@
   justify-content: center;
   align-items: center;
 }
-
 .card {
   background: linear-gradient(-45deg, rgba(0,9,36,1) 0%, rgba(75,183,252,1) 0%, rgb(131, 82, 236) 100%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
   min-height: 400px;
   padding: 1rem;
   border-radius: .6em;
@@ -22,7 +25,6 @@
 	-moz-box-shadow: 0px 10px 40px -5px rgba(0,0,0,0.2);
 	box-shadow: 0px 10px 40px -5px rgba(0,0,0,0.2);
 }
-
 h1 {
   width: 100%;
   display: flex;
@@ -31,7 +33,6 @@ h1 {
 }
 
 .steps {
-  margin: 1rem;
   order: 1
 }
 .footer {
