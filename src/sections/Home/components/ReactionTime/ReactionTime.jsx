@@ -19,8 +19,6 @@ export class ReactionTime extends React.Component {
     return (
       <div style={{ background: this.state.color}} onClick={this.handleClick} id='gameArea'>
         {this.state.instructions}
-        {this.state.analysis.mean && (<div>Mean: {this.state.analysis.mean}</div>)}
-        {this.state.analysis.variance && (<div>Variance: {this.state.analysis.variance}</div>)}
       </div>
     )
   }
@@ -34,10 +32,8 @@ export class ReactionTime extends React.Component {
   end = () => {
     this.changeToBlue();
     this.setState({instructions: 'Information recorded!'})
-    console.log(this.props.data)
-    const mean = this.props.data.reduce((a, b) => { return a + b; })/this.props.data.length
-    const variance = this.props.data.reduce((a, b) => { return Math.abs(a-mean) + b; })/this.props.data.length
-    this.setState({analysis: {mean, variance}})
+    // const mean = this.props.data.reduce((a, b) => { return a + b; })/this.props.data.length
+    // const variance = this.props.data.reduce((a, b) => { return Math.abs(a-mean) + b; })/this.props.data.length
   }
   changeToBlue = () =>  {
     this.setState({
