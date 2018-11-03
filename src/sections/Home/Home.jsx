@@ -6,7 +6,7 @@ import {Description, ReactionTime, SelfieClassifier, BalanceTest} from './compon
 
 export class Home extends React.Component {
   state = {
-    step: 0
+    step: 3
   }
   render() {
     const {step} = this.state
