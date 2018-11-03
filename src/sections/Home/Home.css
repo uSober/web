@@ -31,8 +31,19 @@ h1 {
   font-size: 3rem;
 }
 
+.steps {
+  margin: 1rem;
+  order: 1
+}
 .footer {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .steps {
+    margin: 1rem;
+    order: 0
+  }
 }
