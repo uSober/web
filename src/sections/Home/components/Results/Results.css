@@ -5,6 +5,14 @@
   align-items: center;
 }
 
+em {
+  color: white;
+  background: linear-gradient(90deg,rgba(179,220,237,.7) 0,rgba(41,184,229,.7) 50%,rgba(188,224,238,.5));
+  width: 100%;
+  padding: 1rem;
+  clip-path: polygon(0 0,100% 0,100% 77%,0 100%);
+}
+
 p {
   font-size: 1rem;
 }

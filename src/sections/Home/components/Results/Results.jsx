@@ -8,8 +8,8 @@ export class Results extends React.Component {
   render() {
     return (
       <div className='stack'>
-        <h1>Results!</h1>
-        {this.getResults()}
+        <h1><em>Results</em></h1>
+        {!this.state.reaction && this.getResults()}
         {this.state.reaction}
         <div className='instructions'>
         </div>
