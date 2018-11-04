@@ -26,6 +26,13 @@ export class Results extends React.Component {
     const myReactionMean = reactionData.reduce((a, b) => { return a + b; })/reactionData.length
     console.log(myReactionMean, ((myReactionMean - reactionAvg)/reactionSD)/maxDeviation*100)
     this.setState({reaction: ((myReactionMean - reactionAvg)/reactionSD)/maxDeviation*100})
+    const myBalanceMean = balanceData.reduce((a, b) => { return {gamma: a.gamma + b.gamma, beta: a.beta + b.beta, alpha: a.alpha + b.alpha}; })
+    myBalanceMean.gamma = myBalanceMean.gamma/balanceData.length
+    myBalanceMean.beta = myBalanceMean.beta/balanceData.length
+    myBalanceMean.alpha = myBalanceMean.alpha/balanceData.alpha
+
+    console.log('Balance Mean', myBalanceMean)
+
     // const balMean = this.props.data.reduce((a, b) => { return a + b; })/this.props.data.length
 
     return 0
