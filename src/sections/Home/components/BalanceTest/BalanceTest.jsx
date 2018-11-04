@@ -63,7 +63,7 @@ export class BalanceTest extends React.Component {
     setTimeout(() => this.setState({buttonMessage: 'Game Starting in 1...'}), 2000)
     setTimeout(() => this.setState({buttonMessage: 'Information recorded!'}), 3000)
     setTimeout(() => this.setState({isRecording: true}), 3000)
-
+    setTimeout(this.props.toggleDone, 13000)
     setTimeout(beep, 13000)
     setTimeout(beep, 13100)
     setTimeout(beep, 13200)

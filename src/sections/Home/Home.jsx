@@ -9,7 +9,8 @@ export class Home extends React.Component {
     step: 1,
     selfieData: null,
     reactionData: [],
-    balanceData: []
+    balanceData: [],
+    isBalanceDone: false
   }
 
   render() {
@@ -26,7 +27,7 @@ export class Home extends React.Component {
         curr = <ReactionTime maxTaps={10} data={reactionData} addData={this.addReaction}/>
         break
       case 4:
-        curr = <BalanceTest data={balanceData} addData={this.addBalance} />
+        curr = <BalanceTest data={balanceData} addData={this.addBalance} toggleDone={this.toggleBalanceDone}/>
         break
       case 5:
         curr = <Results reactionData={this.state.reactionData} balanceData={this.state.balanceData} />
@@ -51,12 +52,29 @@ export class Home extends React.Component {
         <div className='card'>
           {curr}
           <div className='footer'>
-            <p className='nextLabel'>{step === 5 ? 'Restart' : 'Next'}</p><Button type="primary" size='large' icon="right" shape="circle" onClick={this.nextStep} />
+            <p className='nextLabel'>{step === 5 ? 'Restart' : 'Next'}</p><Button type="primary" size='large' icon="right" shape="circle" disabled={this.isNextDisabled()} onClick={this.nextStep} />
           </div>
         </div>
       </div>
       </>
     )
+  }
+  toggleBalanceDone = () => {
+    this.setState({isBalanceDone: true})
+  }
+  isNextDisabled = () => {
+    const {step, selfieData, reactionData, isBalanceDone} = this.state
+    if(step === 1) {
+      return false
+    }else if(step === 2) {
+      return selfieData ? false : true
+    }else if(step === 3) {
+      return reactionData.length >= 10 ? false : true
+    }else if(step === 4) {
+      return isBalanceDone ? false : true 
+    }else if(step === 5){
+      return false
+    }
   }
   nextStep = () => {
     const step = this.state.step%5 + 1

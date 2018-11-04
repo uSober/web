@@ -30,6 +30,7 @@ export class SelfieClassifier extends React.Component {
     this.toggleCamera()
     console.log(dataUri)
     this.setState({image: dataUri})
+    this.props.addSelfie(dataUri)
   }
 }
 
