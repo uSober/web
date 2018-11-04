@@ -6,7 +6,9 @@ export class Results extends React.Component {
     reaction: null
   }
   render() {
-    this.getResults()
+    if(this.state.reaction){
+      this.getResults()
+    }
     return (
       <div className='stack'>
         <h1><em>Results</em></h1>
