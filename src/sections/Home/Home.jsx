@@ -29,7 +29,7 @@ export class Home extends React.Component {
         curr = <BalanceTest data={balanceData} addData={this.addBalance} />
         break
       case 5:
-        curr = <Results reactionData={this.state.reactionData} balanceData={this.state.reactionData} />
+        curr = <Results reactionData={this.state.reactionData} balanceData={this.state.balanceData} />
       break
       default:
         curr = null
