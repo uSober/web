@@ -41,9 +41,9 @@ export class Results extends React.Component {
     myBalanceMean.alpha = myBalanceMean.alpha/balanceData.alpha
 
     const myBalanceVar = {}
-    myBalanceVar.gamma = balanceData.length > 0 ? balanceData.reduce((a, b) => { return a + Math.abs(b.gamma - myBalanceMean.gamma); }, 0) : 0
-    myBalanceVar.beta = balanceData.length > 0 ? balanceData.reduce((a, b) => { return a + Math.abs(b.beta - myBalanceMean.beta); }, 0) : 0
-    myBalanceVar.alpha = balanceData.length > 0 ? balanceData.reduce((a, b) => { return a + Math.abs(b.alpha - myBalanceMean.alpha); }, 0) : 0
+    myBalanceVar.gamma = balanceData.reduce((a, b) => { return a + Math.abs(b.gamma - myBalanceMean.gamma); }, 0)|| 0
+    myBalanceVar.beta = balanceData.reduce((a, b) => { return a + Math.abs(b.beta - myBalanceMean.beta); }, 0) || 0
+    myBalanceVar.alpha = balanceData.reduce((a, b) => { return a + Math.abs(b.alpha - myBalanceMean.alpha); }, 0) || 0
 
     const totalSway = myBalanceVar.gamma + myBalanceVar.beta + myBalanceVar.alpha
     console.log('Balance Mean', myBalanceMean)
