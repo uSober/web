@@ -14,8 +14,14 @@ export class Results extends React.Component {
   }
 
   getResults () {
+    //const reactionAvg = 400
+    //const reactionSD = 40
     const {balanceData, reactionData, selfieData} = this.props;
-    console.log(balanceData, reactionData, selfieData)
+    console.log(balanceData, reactionData, selfieData);
+    const myReactionMean = reactionData.reduce((a, b) => { return a + b; })/reactionData.length
+    console.log(myReactionMean, myReactionMean )
+    // const balMean = this.props.data.reduce((a, b) => { return a + b; })/this.props.data.length
+
     return 0
   }
 }
