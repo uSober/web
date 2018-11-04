@@ -32,8 +32,6 @@ export class ReactionTime extends React.Component {
   end = () => {
     this.changeToBlue();
     this.setState({instructions: 'Information recorded!'})
-    // const mean = this.props.data.reduce((a, b) => { return a + b; })/this.props.data.length
-    // const variance = this.props.data.reduce((a, b) => { return Math.abs(a-mean) + b; })/this.props.data.length
   }
   changeToBlue = () =>  {
     this.setState({
