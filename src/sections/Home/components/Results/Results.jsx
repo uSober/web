@@ -7,7 +7,7 @@ export class Results extends React.Component {
   }
   render() {
     if(!this.state.reaction){
-      
+
     }
     return (
       <div className='stack'>
@@ -21,6 +21,9 @@ export class Results extends React.Component {
         </div>
         {this.state.reaction}
         <div className='instructions'>
+          <p className='instruction'>
+             There is a {this.state.reaction}% likelyhood that you are impared!
+          </p>
         </div>
       </div>
     )
@@ -34,7 +37,7 @@ export class Results extends React.Component {
     const {balanceData, reactionData} = this.props;
 
     const myReactionMean = reactionData.reduce((a, b) => { return a + b; })/reactionData.length
-  
+
     const myBalanceMean = balanceData.reduce((a, b) => { return {gamma: a.gamma + b.gamma, beta: a.beta + b.beta, alpha: a.alpha + b.alpha}; })
     myBalanceMean.gamma = myBalanceMean.gamma/balanceData.length
     myBalanceMean.beta = myBalanceMean.beta/balanceData.length
