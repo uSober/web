@@ -31,7 +31,6 @@ export class SelfieClassifier extends React.Component {
     console.log(dataUri)
     this.setState({image: dataUri})
   }
-
 }
 
 export default SelfieClassifier

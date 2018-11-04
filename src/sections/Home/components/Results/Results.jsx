@@ -6,12 +6,19 @@ export class Results extends React.Component {
     reaction: null
   }
   render() {
-    if(this.state.reaction){
-      this.getResults()
+    if(!this.state.reaction){
+      
     }
     return (
       <div className='stack'>
         <h1><em>Results</em></h1>
+        <h1>{Math.round(Math.max(0, Math.min(100,this.getResults()*100)))}%</h1>
+        <div className='icons'>
+        <img src='selfie.svg' width='20%' alt='' />
+        <img src='tap.svg' width='20%' alt='' />
+        <img src='balance2.svg' width='20%' alt='' />
+
+        </div>
         {this.state.reaction}
         <div className='instructions'>
         </div>
@@ -20,32 +27,33 @@ export class Results extends React.Component {
   }
 
   getResults () {
-    const reactionAvg = 400
+    const reactionAvg = 450
     const reactionSD = 40
     const maxDeviation = 3
 
-    const {balanceData, reactionData, selfieData} = this.props;
+    const {balanceData, reactionData} = this.props;
 
-    if(reactionData.length > 0){
-      const myReactionMean = reactionData.reduce((a, b) => { return a + b; })/reactionData.length
-      this.setState({reaction: ((myReactionMean - reactionAvg)/reactionSD)/maxDeviation*100})
-    }
-    
-    if(reactionData.length > 0){
-      const myBalanceMean = balanceData.reduce((a, b) => { return {gamma: a.gamma + b.gamma, beta: a.beta + b.beta, alpha: a.alpha + b.alpha}; })
-      myBalanceMean.gamma = myBalanceMean.gamma/balanceData.length
-      myBalanceMean.beta = myBalanceMean.beta/balanceData.length
-      myBalanceMean.alpha = myBalanceMean.alpha/balanceData.alpha
-      console.log('Balance Mean', myBalanceMean)
+    const myReactionMean = reactionData.reduce((a, b) => { return a + b; })/reactionData.length
+  
+    const myBalanceMean = balanceData.reduce((a, b) => { return {gamma: a.gamma + b.gamma, beta: a.beta + b.beta, alpha: a.alpha + b.alpha}; })
+    myBalanceMean.gamma = myBalanceMean.gamma/balanceData.length
+    myBalanceMean.beta = myBalanceMean.beta/balanceData.length
+    myBalanceMean.alpha = myBalanceMean.alpha/balanceData.alpha
 
-    }
-    
+    const myBalanceVar = {}
+    myBalanceVar.gamma = balanceData.reduce((a, b) => { return a + Math.abs(b.gamma - myBalanceMean.gamma); }, 0) || 0
+    myBalanceVar.beta = balanceData.reduce((a, b) => { return a + Math.abs(b.beta - myBalanceMean.beta); }, 0) || 0
+    myBalanceVar.alpha = balanceData.reduce((a, b) => { return a + Math.abs(b.alpha - myBalanceMean.alpha); }, 0) || 0
 
-    console.log(balanceData, reactionData, selfieData);
+    const totalSway = myBalanceVar.gamma + myBalanceVar.beta + myBalanceVar.alpha
+    console.log('Balance Mean', myBalanceMean)
+    console.log('Balance Variance', myBalanceVar)
+    console.log('Sway', totalSway)
 
-    // const balMean = this.props.data.reduce((a, b) => { return a + b; })/this.props.data.length
+    const drunkScore = totalSway/10000 + ((myReactionMean - reactionAvg)/reactionSD)/maxDeviation 
 
-    return 0
+
+    return drunkScore
   }
 }
 
