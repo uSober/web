@@ -5,7 +5,7 @@ export class ReactionTime extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 1,
+      count: 0,
       color: '#4AA6FC',
       instructions: 'Tap to Start',
       analysis: {
@@ -42,7 +42,7 @@ export class ReactionTime extends React.Component {
   changeToRed = () =>  {
     this.setState({
       color: '#D63D1B',
-      instructions: 'Tap when screen turns green!',
+      instructions: `${this.maxTaps - this.state.count} more, Tap when screen turns green!`,
       lastStartTime: Date.now(),
     });
   }
@@ -65,6 +65,7 @@ export class ReactionTime extends React.Component {
     //If Blue
     if(this.state.color === '#4AA6FC') {
       this.start();
+      this.incrementCount();
       //If Red
     } else if(this.state.color === '#D63D1B') {
       this.addReactionTime(Date.now() - this.state.lastStartTime);
