@@ -50,7 +50,7 @@ export class Results extends React.Component {
     console.log('Balance Variance', myBalanceVar)
     console.log('Sway', totalSway)
 
-    const drunkScore = totalSway/10000 + ((myReactionMean - reactionAvg)/reactionSD)/maxDeviation 
+    const drunkScore = (totalSway/10000 + ((myReactionMean - reactionAvg)/reactionSD)/maxDeviation)/2
 
 
     return drunkScore
