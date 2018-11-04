@@ -36,7 +36,7 @@ export class BalanceTest extends React.Component {
           <p className='instruction'><span>Step 3: </span> Extend arms out to the side with palms down.</p>
           <p className='instruction'><span>Step 4: </span> Wait for completion sound.</p>
           <p className='instruction'>When you are ready, please press the Start button to begin the Balance test.</p>
-          {!this.state.isRecording && <Button type="primary" icon="play" onClick={this.startRecording}>
+          {!this.state.isRecording && <Button disabled={!this.state.startButton} type="primary" icon="play" onClick={this.startRecording}>
             {this.state.buttonMessage}
           </Button>}
         </div>
